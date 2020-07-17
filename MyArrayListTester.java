@@ -5,9 +5,11 @@ public class MyArrayListTester {
         MyArrayList a2 = new MyArrayList();
 
         a1.add(1);
-        a2.add(2);
+        a2.add(1);
 
         System.out.println(a1.toString());
         System.out.println(a2.toString());
+
+        System.out.println(a1.equals(a2));
     }
 }

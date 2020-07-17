@@ -1,5 +1,3 @@
-import javax.xml.bind.annotation.XmlElement.DEFAULT;
-
 public class MyArrayList {
 
     private Object[] arr;
@@ -18,11 +16,15 @@ public class MyArrayList {
 
     // pre: 0 <= idx < size
     public Object get(int idx) {
+        if (idx < 0 || idx >= size)
+            throw new IndexOutOfBoundsException("This is an invalid index");
         return arr[idx];
     }
 
     // pre 0 <= idx < size
     public Object remove(int idx) {
+        if (idx < 0 || idx >= size)
+            throw new IndexOutOfBoundsException("This is an invalid index");
         Object toRet = arr[idx];
         size--;
         for (int i = idx; i < size - 1; i++)
@@ -33,6 +35,8 @@ public class MyArrayList {
 
     // pre 0 <= idx <= size
     public void insert(int idx, Object o) {
+        if (idx < 0 || idx > size)
+            throw new IndexOutOfBoundsException("This is an invalid index");
         if (size == arr.length)
             resize();
         for (int i = size; i > idx; i++) {
