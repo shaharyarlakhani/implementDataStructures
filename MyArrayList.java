@@ -58,7 +58,7 @@ public class MyArrayList {
 
     // uses StringBuffer
     public String toString() {
-        StringBuffer toRet = new StringBuffer();
+        StringBuilder toRet = new StringBuilder();
         toRet.append("[");
         if (size > 0) {
             toRet.append(arr[0]);
